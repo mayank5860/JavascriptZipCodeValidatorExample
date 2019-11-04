@@ -1,0 +1,42 @@
+input {
+    width: 100%;
+  }
+
+  .zipCodeInput {
+    width: 30%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+
+  .error {
+    width: 30%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid red !important;
+  }
+
+  .container {
+    padding: 10px 10px;
+    border-width:2px;
+    border-style:solid;
+    border-color:black;
+  }
+
+  .margin_bottom-10 {
+      margin-bottom: 25px;
+  }
+
+.margin_top-10 {
+    margin-top: 10px;
+}
+
+.margin_10 {
+    margin: 15px 10px 15px 0px;
+}
+
+.hint {
+    /* margin-top: 10px; */
+    padding-left: 110px;
+    font-style:italic;
+}
