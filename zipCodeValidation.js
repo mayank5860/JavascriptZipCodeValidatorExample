@@ -8,20 +8,29 @@ Output should be = [94133,94133] [94200,94399]
 */
 class ZipCodeValidator {
 
-    //constructor used to attached the button listeners
+   
+    /*
+    Constructor used to initialize the fields values and attached the button 
+    listeners function to call, when user take any action.  
+    */
     constructor() {
         document.getElementById("validate").onclick = this.validateZipCode.bind(this);
         document.getElementById("clear").onclick = this.clearForm.bind(this);
     }
 
-    //This function used to clear the form values
+    /*
+    Function used to reset the fields values to default, when hit the clear button
+    */
     clearForm() {
         this.ranges = [];
         document.getElementById("zipCode").value = '';
         document.getElementById('zipCode').className = 'zipCodeInput'
     }
 
-    //This function used to validate the zipcode values
+    /*
+    This function is responsible to parse the input zipcode array string into array of array and 
+    use that object to validate and return the string array object 
+    */
     validateZipCode() {
 
         this.ranges = [];
@@ -38,7 +47,11 @@ class ZipCodeValidator {
         }
     }
 
-    //This function used to parse the zipcode 
+    /*
+    This function used to validate the input zipcode array contains the [min, max] values. It check the array and compare
+    the "min" value of current index is greater than the next index value then use next index value and so on. 
+    Reverse case for the max value. If the array length is equal to one then return the current index values.
+    */
     parseZipcode() {
         let output = "";
         const zipCodeValues = this.ranges;
@@ -89,7 +102,9 @@ class ZipCodeValidator {
         document.getElementById("result").innerHTML = output;
     }
 
-    //Convert the string Array object into Array
+    /*
+    Function used to convert the string Array into Array of array to loop through
+    */
     convertStringToArray(values) {
         if (values != null && values != undefined) {
             let splitArray = values.split('[');
@@ -117,7 +132,10 @@ class ZipCodeValidator {
         }
     }
 
-    //This function used to sort the array of array object
+    /*
+    This is the custom sort function to sort the array of array contain number
+    to sort numerically
+    */
     sortFunction(a, b) {
         if (a[0] === b[0]) {
             return 0;
